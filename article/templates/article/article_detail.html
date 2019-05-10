@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <h1>{{ article.pk }}</h1>
+    <h1>{{ article.title }}</h1>
+    <hr class="one">
+    <p>{{ article.body }}</p>
+    <p>by {{ article.author}}</p>
+    <p>{{ article.create_date }}</p>
+{% endblock %}
+    <style>
+        .one{
+            width:600px;
+        }
+    </style>

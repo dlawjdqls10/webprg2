@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <main role="main">
+        <div class="container">
+        <br>
+        <br>
+        <br>
+        <h1>Articles</h1>
+            {% if article_list %}
+            <ul class="article_list">
+                {% for article in article_list %}
+                    <li><a href="{{ article.get_absolute_url }}">{{article.title}}</a>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <p>there are no articles in the ArticleApp.</p>
+            {% endif %}
+        </div>
+    </main>
+    <style>
+        .article_list{
+            list-style-type: none;
+        }
+        .article_list li:first-child{
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom: none}
+        .article_list li:last-child{border-top:none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;}
+        .article_list li{
+
+            border:0.5px solid #adb5bd;
+            padding: 10px;
+        }
+    </style>
+{% endblock %}
